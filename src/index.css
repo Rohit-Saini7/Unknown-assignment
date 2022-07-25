@@ -1,13 +1,85 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 1rem;
+  background-color: #1d2b3a;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  border: 2px solid rgba(0, 223, 196, 0.7);
+  border-radius: 7px;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+.inputBox input,
+.inputBox .value {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #1d2b3a;
+  border-radius: 7px;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span,
+.inputBox .value ~ span {
+  color: #00dfc4;
+  transform: translateX(10px) translateY(-6px);
+  font-size: 0.65rem;
+  padding: 0 10px;
+  background: #1d2b3a;
+  border-left: 1px solid #00dfc4;
+  border-right: 1px solid #00dfc4;
+  letter-spacing: 0.2rem;
+}
+
+.inputBox input:valid,
+.inputBox input:focus,
+.inputBox .value {
+  border: 1px solid #00dfc4;
+}
+
+.form button {
+  outline: none;
+  border: 1px solid #00dfc4;
+
+  background-color: #00dfc4;
+  color: #1d2b3a;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+.form button:hover {
+  background-color: #1d2b3a;
+  color: #00dfc4;
 }
